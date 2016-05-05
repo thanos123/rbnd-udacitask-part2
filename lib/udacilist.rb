@@ -12,11 +12,13 @@ class UdaciList
     check_type(type)
     @items.push Object.const_get(@@item_class_names[type]).new(description, options)
   end
-  def delete(index)
-    if index > @items.count
-      raise UdaciListErrors::IndexExceedsListSize, "Index #{index} exceeds the size of the list"
+  def delete(*indexes)
+    indexes.each do |index|
+      if index > @items.count
+        raise UdaciListErrors::IndexExceedsListSize, "Index #{index} exceeds the size of the list"
+      end
+      @items.delete_at(index - 1)
     end
-    @items.delete_at(index - 1)
   end
   # checks if type exists and raises error if it doesn't
   def check_type(type)
@@ -52,7 +54,9 @@ class UdaciList
     print_title()
     print_table(@items)
   end
-  def filter(type)
+  # filters items by type
+  # it can also filter the from date
+  def filter(type, date_from = nil)
     check_type(type)
     print_title("type: "+type)
     type_items = @items.select{ |item| item.class.name == @@item_class_names[type]}
