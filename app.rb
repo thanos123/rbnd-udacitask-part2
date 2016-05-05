@@ -1,5 +1,5 @@
 require 'chronic'
-require 'colorize'
+#require 'colorize' #command_line_reporter uses the colored gem, which is in conflict with colorize
 require 'command_line_reporter'
 require 'date'
 require_relative "lib/listable"
