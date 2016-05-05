@@ -36,7 +36,7 @@ new_list.add("link", "http://ruby-doc.org")
 # ----------------------------
 # new_list.add("image", "http://ruby-doc.org") # Throws InvalidItemType error
 # new_list.delete(9) # Throws an IndexExceedsListSize error
-# new_list.add("todo", "Hack some portals", priority: "super high") # throws an InvalidPriorityValue error
+new_list.add("todo", "Hack some portals", priority: "super high") # throws an InvalidPriorityValue error
 
 # DISPLAY UNTITLED LIST
 # ---------------------
