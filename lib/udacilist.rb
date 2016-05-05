@@ -56,6 +56,7 @@ class UdaciList
     check_type(type)
     print_title("type: "+type)
     type_items = @items.select{ |item| item.class.name == @@item_class_names[type]}
+    raise UdaciListErrors::TypeHasNoItems, "There aren't any items of type #{type}." if type_items.count < 1
     print_table(type_items)
   end
 end

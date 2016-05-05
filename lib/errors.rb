@@ -5,4 +5,6 @@ module UdaciListErrors
   end
   class InvalidPriorityValue < StandardError
   end
+  class TypeHasNoItems < StandardError
+  end
 end
