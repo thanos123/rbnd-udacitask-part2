@@ -1,4 +1,5 @@
 class UdaciList
+  include CommandLineReporter
   attr_reader :title, :items
   @@item_class_names = {"todo" => "TodoItem", "event" => "EventItem", "link" => "LinkItem"}
 
@@ -30,18 +31,31 @@ class UdaciList
     puts title
     puts "-" * title.length
   end
+  # prints a table of the items usinf the CommandLineReporter gem
+  def print_table(items)
+    table(:border => true) do
+      row do
+        column('#', :width => 3)
+        column('TYPE', :width => 10)
+        column('DETAILS', :width => 70)
+      end
+      items.each_with_index do |item, position|
+        row do
+          column(position+1)
+          column(@@item_class_names.key(item.class.name))
+          column(item.details)
+        end
+      end
+    end
+  end
   def all
     print_title()
-    @items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details}"
-    end
+    print_table(@items)
   end
   def filter(type)
     check_type(type)
     print_title("type: "+type)
     type_items = @items.select{ |item| item.class.name == @@item_class_names[type]}
-    type_items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details}"
-    end
+    print_table(type_items)
   end
 end

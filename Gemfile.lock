@@ -2,7 +2,10 @@ GEM
   remote: https://rubygems.org/
   specs:
     chronic (0.10.2)
+    colored (1.2)
     colorize (0.7.7)
+    command_line_reporter (3.3.6)
+      colored (>= 1.2)
 
 PLATFORMS
   ruby
@@ -10,6 +13,7 @@ PLATFORMS
 DEPENDENCIES
   chronic (= 0.10.2)
   colorize (= 0.7.7)
+  command_line_reporter (>= 3.0)
 
 BUNDLED WITH
    1.12.1

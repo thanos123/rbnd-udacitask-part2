@@ -1,6 +1,6 @@
 require 'chronic'
 require 'colorize'
-# Find a third gem of your choice and add it to your project
+require 'command_line_reporter'
 require 'date'
 require_relative "lib/listable"
 require_relative "lib/errors"
