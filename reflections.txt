@@ -1,13 +1,23 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+I used the CommandLineReporter gem for displaying report tables
 2. Describe the 2 features you added to the project.
-  a) Feature 1...
-  b) Feature 2...
+  a) highlighting dates of todo items that are due today
+  b) ability to delete multiple items
 
 # REFLECTIONS
 # -------------------------------------------------------
-1. How long did you spend working on this project?
+1. How long did you spend working on this project? 
+around 4 hours
+
 2. What was the most rewarding challenge you conquered?
+highlighting the due date as I has a gem conflict problem between gems colorize and colored
+
 3. What two additional features did you build? Why?
+As above
+a) so that the users can see easily what they need to do today
+b) to save user's time if they want to delete multiple items
+
 4. Where do you still have room to grow?
+writing clean code that doesn't look messy and naming the variables and methods as best as possible.
