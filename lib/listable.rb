@@ -7,7 +7,7 @@ module Listable
     value = " ⇨" if priority == "medium"
     value = " ⇩" if priority == "low"
     value = "" if !priority
-    return value
+    return value.red
   end
   def format_date(start_date, end_date = nil)
     dates = start_date.strftime("%D") if start_date

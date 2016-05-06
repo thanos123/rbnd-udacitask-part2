@@ -13,12 +13,8 @@ class UdaciList
     @items.push Object.const_get(@@item_class_names[type]).new(description, options)
   end
   def delete(*indexes)
-    indexes.each do |index|
-      if index > @items.count
-        raise UdaciListErrors::IndexExceedsListSize, "Index #{index} exceeds the size of the list"
-      end
-      @items.delete_at(index - 1)
-    end
+    indices_list = *indexes
+    @items.delete_if.with_index {|_, index| indices_list.include? index + 1}
   end
   # checks if type exists and raises error if it doesn't
   def check_type(type)
